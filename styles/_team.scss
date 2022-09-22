@@ -1,0 +1,73 @@
+.team {
+  min-height: 967px;
+  width: 100%;
+  &-title {
+    @include title-font();
+    margin: 120px 0;
+    position: relative;
+    a {
+      padding-top: 100px;
+    }
+  }
+
+  &-title::before {
+    @include under-line();
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    // column-gap: 30px;
+    justify-content: space-between;
+
+  }
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 12px;
+    column-gap: 12px;
+    .card-content * + * {
+      padding-top: 12px;
+    }
+    .card-content > .title {
+      font-size: 14px !important; 
+      @include title-font();
+      line-height: 14px !important;
+
+      @media (max-width: 900px) {
+        // font-size: 24px;
+      }
+      a {
+        padding-top: 100px
+      }
+      }
+      // font-size: 14px !important; 
+
+    }
+    .card-content > .subtitle {
+      @include subtitle-font();
+
+    }
+
+    
+  }
+
+@media only screen and (max-width: 1200px) {
+  .team {
+    min-height: 120vh;
+  }
+  .team-card > div:nth-child(1) {
+    width: 30vw;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .team-card > div:nth-child(1) img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+

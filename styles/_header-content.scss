@@ -1,0 +1,33 @@
+header {
+  background-image: url("../img/Header-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.header-title {
+  @include fonts(500, $monserrat, 72px, 0, 88px);
+  @media only screen and (max-width: 900px) {
+    @include fonts(500, $monserrat, 54px, 0, 70px);
+  }
+  
+  color: white;
+  padding-top: 200px;
+  margin-bottom: 18px;
+  margin-top: 180px;
+}
+
+.header-subtitle {
+  @include fonts(700, $monserrat, 16px, 2.7, 20px);
+  color: rgba(252, 187, 8, 1);
+  margin-bottom: 180px;
+}

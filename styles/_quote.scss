@@ -1,0 +1,24 @@
+.quote {
+  min-height: 433px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  &-content * + * {
+    padding-top: 51px;
+
+  }
+  &-title {
+    font-style: italic;
+    @include fonts(500, $monserrat, 18px, 0, 36px);
+    @media only screen and (max-width: 900px) {
+      @include fonts(500, $monserrat, 12px, 0, 24px)
+    };
+  }
+  &-subtitle {
+    @include fonts(500, $monserrat, 14px, 0 , 28px);
+    color: #9E9E9E;
+  }
+}
+

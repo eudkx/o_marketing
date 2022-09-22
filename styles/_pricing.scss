@@ -1,0 +1,84 @@
+.pricing {
+  padding-bottom: 100px;
+  width: 100%;
+  min-height: 1070px;
+  &-title {
+    @include title-font();
+    @media only screen and (max-width: 900px) {
+      @include adaptive_title;
+    }
+    position: relative;
+    margin: 120px 0;
+  }
+  &-title::before {
+    @include under-line;
+  }
+  &-content {
+    display: flex;
+  }
+  .pricing-card {
+    background: linear-gradient(135deg, rgba(198, 198, 198, 0) 0%, rgba(192, 192, 192, 0) 100%);
+    // opacity: 0.8;
+    transition: opacity 2s ease;
+    width: 100%;
+    max-width: 370px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 55px;
+    row-gap: 55px;
+    align-items: center;
+    text-align: center;
+    .content-title {
+      justify-self: left;
+      align-self: flex-start;
+    }
+    .content-title {
+      @include fonts(700, $opensans, 16px, 0, auto);
+    }
+    .content-price {
+      @include fonts(300, $opensans, 80px, 0, auto);
+      @media only screen and (max-width: 900px) {
+        @include fonts(300, $opensans, 54px, 0, auto);
+      }
+      position: relative;
+    }
+    .content-price::before {
+      position: absolute;  
+      content: "$";
+      font-size: 40px;
+      top: 15px;
+      left: -30px;
+    }
+    .pricing-info {
+        @include fonts(300, $opensans, 16px, 0, auto);
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .choosing {
+      @include fonts(700, $monserrat, 14px, 1.2px, auto)
+    }    
+    
+  }
+  @media only screen and (max-width: 900px) {
+    .pricing-content {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 100px;
+    }
+    .pricing-card {
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
+    }
+  }
+}
+
+.pricing-card:hover {
+  // opacity: 1;
+  background: linear-gradient(135deg, rgba(198, 198, 198, .4) 0%, rgba(192, 192, 192, 0.6) 100%);
+  transition: opacity 1s ease;
+  // border-bottom: 2px solid rgb(87, 87, 87);
+  // border-right: 2px solid rgb(94, 94, 94);
+}

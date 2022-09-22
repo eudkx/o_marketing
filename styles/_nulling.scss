@@ -1,0 +1,109 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+html {
+  overflow-x: hidden;
+}
+// body {
+//   max-width: 1440px;
+//   width: 100%;
+// }
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  // width: 100vw;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+  
+}
+$monserrat: "Montserrat", sans-serif;
+$raleway: "Raleway", sans-serif;
+$opensans: "Open Sans", sans-serif;
+
+@mixin fonts($fw, $font, $fs, $ls, $lh) {
+  font-weight: $fw;
+  font-family: $font;
+  font-size: $fs;
+  letter-spacing: $ls;
+  line-height: $lh;
+}
+
+.container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  max-width: 1170px;
+  margin: 0 auto;
+  // margin: 0 15px;
+}
+@media (max-width: 1200px) {
+  .container {
+    width: auto;
+    margin: 0 15px;
+  }
+}
+
+@mixin under-line() {
+  position: absolute;
+  top: 80px;
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: rgba(252, 187, 8, 1);
+  @media screen and (max-width: 1100px) {
+    top: 120%;
+  }
+}
+
+@mixin title-font {
+  @include fonts(700, $monserrat, 60px, -1.65px, 50px);
+}
+
+@mixin subtitle-font {
+  @include fonts(400, $monserrat, 11px, 1px, 24px);
+  color: #727272;
+}
+
+@mixin stats-loader($percent, $top) {
+  content: "";
+  width: calc(370px - $percent - 10px);
+  position: absolute;
+  height: 2px;
+  background-color: black;
+  top: $top;
+}
+@mixin icons-loader($url) {
+  width: 100%;
+  height: 100%;
+  max-width: 50px;
+  max-height: 55px;
+  
+  display: block;
+  content: "";
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 500px) {
+  .title {
+    font-size: 11vw !important;
+    line-height: 11vw !important;
+  }
+}
+@mixin adaptive_title() {
+  @include fonts(700, $monserrat, 48px, -1.65px, 50px);
+}
+@mixin adaptive_subtitle() {
+  @include fonts(400, $monserrat, 9px, 1px, 20px);
+  color: #727272;
+}
